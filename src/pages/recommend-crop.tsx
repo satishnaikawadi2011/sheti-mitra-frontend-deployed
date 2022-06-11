@@ -9,6 +9,8 @@ import useApi from '../hooks/useApi';
 import LoadingSpinner from '../components/LoadingSpinner/LoadingSpinner';
 import PageWrapper from '../components/PageWrapper/PageWrapper';
 import CropCard from '../components/CropCard/CropCard';
+import { Helmet } from 'react-helmet';
+import { APP_NAME } from '../constants';
 
 const StyledForm = styled.form`width: 550px;`;
 
@@ -92,6 +94,9 @@ const RecommendCropPage = () => {
 	if (data) {
 		return (
 			<PageWrapper>
+				<Helmet>
+					<title>Crop Recommendation | {APP_NAME}</title>
+				</Helmet>
 				<div
 					style={{
 						display: 'flex',
@@ -108,6 +113,9 @@ const RecommendCropPage = () => {
 
 	return (
 		<PageWrapper>
+			<Helmet>
+				<title>Crop Recommendation | {APP_NAME}</title>
+			</Helmet>
 			<h1 style={{ textAlign: 'center', color: darkTheme.palette.primary }}>Crop Recommendation</h1>
 			<div style={{ display: 'flex', justifyContent: 'center' }}>
 				<StyledForm>

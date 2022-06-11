@@ -1,7 +1,9 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { Container } from '../components/Container/Container';
+import { APP_NAME } from '../constants';
 
 const VerticallyCenter = styled.div`
 	min-height: 100%;
@@ -22,6 +24,9 @@ const NotFoundPage = () => {
 	let navigate = useNavigate();
 	return (
 		<VerticallyCenter>
+			<Helmet>
+				<title>Page Not Found | {APP_NAME}</title>
+			</Helmet>
 			<Container>
 				<TextCenter>
 					<h1>😮</h1>
